@@ -10,8 +10,8 @@ void CLovelaceLogProxy::CloseAllSinks() {
 	}
 }
 
-void CLovelaceLogProxy::AbstractWrite(std::string szPrefix, std::string szFormatted) {
+void CLovelaceLogProxy::AbstractWrite(std::string szPrefix, std::string szFormatted, uint16_t u16AccentColor) {
 	for (auto sink : m_logSinks) {
-		sink->InnerWrite(szPrefix, szFormatted);
+		sink->InnerWrite(szPrefix, szFormatted, u16AccentColor);
 	}
 }

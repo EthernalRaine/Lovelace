@@ -5,6 +5,7 @@ void CLovelaceThread::CreateThread(uint32_t ulThreadHash, std::function<void()> 
 
 	const auto hThread = ::CreateThread(NULL, NULL, [](LPVOID) -> DWORD {
 		m_currentThreadAction();
+		return 0;
 	}, NULL, NULL, NULL);
 
 	m_threadMap[ulThreadHash] = hThread;

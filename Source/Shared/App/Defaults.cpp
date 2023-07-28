@@ -6,8 +6,8 @@
 void CLovelaceDefaults::InitializeApplication(std::shared_ptr<CLovelaceProperties> pProp, std::function<void()> fnBoilerPlate) {
 	pProp->SetConsoleColor(RGB(31, 128, 196));
 
-	CLovelaceLogProxy::Get()->AddSink(std::make_shared<CLovelaceConsoleLogSink>());
-	CLovelaceLogProxy::Get()->AddSink(std::make_shared<CLovelaceFileLogSink>());
+	CLovelaceLogProxy::Get()->AddSink(std::make_shared<CLovelaceConsoleLogSink>(pProp));
+	CLovelaceLogProxy::Get()->AddSink(std::make_shared<CLovelaceFileLogSink>(pProp));
 	
 	{
 		fnBoilerPlate();

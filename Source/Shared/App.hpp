@@ -9,9 +9,10 @@
 #include "App/Properties.hpp"
 
 class CLovelaceApp {
-	HMODULE m_hAppBaseAddress;
 public:
-	CLovelaceApp(HMODULE hAppBaseAddress);
+	HMODULE m_hAppBaseAddress;
+
+	void Construct(HMODULE hAppBaseAddress);
 
 	void Initialize(DWORD dwCallReason);
 

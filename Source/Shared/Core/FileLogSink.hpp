@@ -9,7 +9,7 @@
 class CLovelaceFileLogSink : public CLovelaceAbstractLogSink {
 public:
 	CLovelaceFileLogSink(std::shared_ptr<CLovelaceProperties> pProp);
-	~CLovelaceFileLogSink() override;
+	~CLovelaceFileLogSink();
 
 	void InnerWrite(std::string szPrefix, std::string szFormatted, uint16_t u16AccentColor) override;
 private:

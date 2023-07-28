@@ -2,7 +2,7 @@
 
 #include "Utility/Thread.hpp"
 
-CLovelaceApp::CLovelaceApp(HMODULE hAppBaseAddress) {
+void CLovelaceApp::Construct(HMODULE hAppBaseAddress) {
 	m_hAppBaseAddress = hAppBaseAddress;
 
 	m_pApplicationProperties = std::make_shared<CLovelaceProperties>();
