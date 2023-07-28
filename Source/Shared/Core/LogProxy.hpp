@@ -10,6 +10,8 @@
 #include <consoleapi.h>
 
 class CLovelaceLogProxy : public CLovelaceSingleton<CLovelaceLogProxy> {
+	std::vector<std::shared_ptr<CLovelaceAbstractLogSink>> m_logSinks{};
+	void AbstractWrite(std::string szPrefix, std::string szFormatted, uint16_t u16AccentColor);
 public:
 	CLovelaceLogProxy() = default;
 
@@ -33,8 +35,8 @@ public:
 
 	void AddSink(std::shared_ptr<CLovelaceAbstractLogSink> pSink);
 	void CloseAllSinks();
-private:
-	std::vector<std::shared_ptr<CLovelaceAbstractLogSink>> m_logSinks{};
-
-	void AbstractWrite(std::string szPrefix, std::string szFormatted, uint16_t u16AccentColor);
 };
+
+#define LovelaceLog CLovelaceLogProxy::Get()->Write
+#define LovelaceLogWarn CLovelaceLogProxy::Get()->WriteWarning
+#define LovelaceLogError CLovelaceLogProxy::Get()->WriteError

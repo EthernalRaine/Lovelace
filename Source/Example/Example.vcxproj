@@ -183,12 +183,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="app\ExampleApp.hpp" />
+    <ClInclude Include="App\ExampleApp.hpp" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp" />
-    <ClCompile Include="app\ExampleApp.cpp" />
+    <ClCompile Include="App\ExampleApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.vcxproj">

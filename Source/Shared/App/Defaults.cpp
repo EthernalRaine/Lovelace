@@ -9,17 +9,15 @@ void CLovelaceDefaults::InitializeApplication(std::shared_ptr<CLovelacePropertie
 	CLovelaceLogProxy::Get()->AddSink(std::make_shared<CLovelaceConsoleLogSink>(pProp));
 	CLovelaceLogProxy::Get()->AddSink(std::make_shared<CLovelaceFileLogSink>(pProp));
 	
-	{
-		fnBoilerPlate();
-	}
+	fnBoilerPlate();
 
 	pProp->SetAppState(LovelaceApplicationState::Initialized);
 }
 
 void CLovelaceDefaults::ShutdownApplication(std::shared_ptr<CLovelaceProperties> pProp, std::function<void()> fnBoilerPlate) {
-	{
-		fnBoilerPlate();
-	}
+	fnBoilerPlate();
+
+	CLovelaceLogProxy::Get()->CloseAllSinks();
 
 	pProp->SetAppState(LovelaceApplicationState::Shutdown);
 }

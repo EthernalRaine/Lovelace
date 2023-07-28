@@ -7,13 +7,11 @@
 #include <fstream>
 
 class CLovelaceFileLogSink : public CLovelaceAbstractLogSink {
+	std::mutex m_logMutex{};
+	std::ofstream m_outputStream{};
 public:
 	CLovelaceFileLogSink(std::shared_ptr<CLovelaceProperties> pProp);
 	~CLovelaceFileLogSink();
 
 	void InnerWrite(std::string szPrefix, std::string szFormatted, uint16_t u16AccentColor) override;
-private:
-	std::mutex m_logMutex{};
-	std::ofstream m_outputStream{};
-
 };
