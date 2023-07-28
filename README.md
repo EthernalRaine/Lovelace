@@ -3,7 +3,7 @@
 Small, extensible and versatile base. 
 <img align="right" height="128" alt="Ada Lovelace" src="https://cumslut.lol/content/cdn/IZOCGFwqxLld.png" />
 
-Lovelace is a small, C++17, internal gamehacking project template. 
+Lovelace is a small, C++20, internal gamehacking project template. 
 Designed to be versatile yet compact, Lovelace's design goal was to be able quickly get started with a new project, without having to write required boilerplate code.
 
 ## How to create a new Application using Lovelace
