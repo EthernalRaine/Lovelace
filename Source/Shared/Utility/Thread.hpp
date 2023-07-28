@@ -12,6 +12,4 @@ class CLovelaceThread : public CLovelaceSingleton<CLovelaceThread> {
 public:
 	void CreateThread(uint32_t ulThreadHash, std::function<void()> threadAction);
 	void DestroyThread(uint32_t ulThreadHash);
-	void SuspendThread(uint32_t ulThreadHash);
-	void ResumeThread(uint32_t ulThreadHash);
 };

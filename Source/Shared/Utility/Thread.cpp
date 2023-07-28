@@ -12,13 +12,5 @@ void CLovelaceThread::CreateThread(uint32_t ulThreadHash, std::function<void()> 
 }
 
 void CLovelaceThread::DestroyThread(uint32_t ulThreadHash) {
-
-}
-
-void CLovelaceThread::SuspendThread(uint32_t ulThreadHash) {
-
-}
-
-void CLovelaceThread::ResumeThread(uint32_t ulThreadHash) {
-
+	CloseHandle(m_threadMap[ulThreadHash]);
 }
